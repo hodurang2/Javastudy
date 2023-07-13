@@ -123,16 +123,71 @@ public class MainWrapper {
     System.out.println(orResult);
     System.out.println(notResult);
     
+    // Short Circuit Evaluation
+    // 1. 논리 AND : 결과가 false인 조건이 나타나면 더이상 조건을 체크하지않는다. 최종 결과는 false이다.
+    // 2. 논리 OR  : 결과가 true인 조건이 나타나면 더 이상 조건을 체크하지않는다. 최종 결과는 true이다.
+    int i = 10;
+    int j = 10;
+    
+    boolean andSceResult = (++i == 10) && (++j == 10);  
+    // ++i에서 i가 11이 됐고 11 == 10은 false이기 때문에 이미 조건에서 틀렸으므로 ++j는 실행되지 않는다.
+    System.out.println(andSceResult);
+    System.out.println(i);
+    System.out.println(j);
+    
+    boolean orSceResult = ( j++ == 10 ) || ( i++ == 10 ); 
+    // j++에서 후위증감이기 때문에 논리연산에 j 사용후 ++된다 그리고 OR에서 이미 true가 되었기 때문에 뒤 i++ 는 진행하지 않는다.
+    System.out.println(orSceResult);
+    System.out.println(i);
+    System.out.println(j);
+        
+  }
+
+  // ex05 메소드 만들기
+  public static void ex05() {
+    
+    // 조건 연산자 ( 3개의 항을 사용하므로 삼항 연산이라고도 한다. )
+    // 조건식 ? true인 경우 결과 : false인 경우 결과
+    
+    int score = 100;
+    
+    String result = ( score >= 60 ) ? "합격" : "불합격";
+    System.out.println(result);
+    
   }
   
-  
+  //ex06 메소드 만들기
+  public static void ex06() {
+    
+    // 문자열 연결
+    String str1 = "랑이" + "호두";
+    String str2 = 4 + "달라";
+    String str3 = 1 + 2 + "번지";
+    System.out.println("\n문자열 연결하기");
+    System.out.println(str1);
+    System.out.println(str2);
+    System.out.println(str3);
+    
+    // 정수 -> 문자열
+    // 실수 -> 문자열
+    System.out.println("\n빈문자열로(\"\") 숫자 문자열로 바꾸기");
+    String str4 = 100 + ""; // 빈 문자열 더하기
+    String str5 = 1.5 + ""; // 빈 문자열 더하기
+    
+    //참고. 문자열로 변환하는 메소드가 있다.
+    String str6 = String.value0f(100); // 잘 안 쓸 뿐
+    System.out.println("/n문자열로 변환하는 메소드");
+    System.out.println(str6);
+    
+  }
+ 
   public static void main(String[] args) {
     // ex01 메소드 실행 부탁
-    ex01();
-    ex02();
-    ex03();
-    ex04();
-
+//    ex01();
+//    ex02();
+//    ex03();
+//    ex04();
+      ex05();
   }
 
 }
