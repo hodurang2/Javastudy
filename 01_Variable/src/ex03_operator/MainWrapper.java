@@ -175,8 +175,8 @@ public class MainWrapper {
     String str5 = 1.5 + ""; // 빈 문자열 더하기
     
     //참고. 문자열로 변환하는 메소드가 있다.
-    String str6 = String.value0f(100); // 잘 안 쓸 뿐
-    System.out.println("/n문자열로 변환하는 메소드");
+    String str6 = String.valueOf(100); // 잘 안 쓸 뿐
+    System.out.println("\n문자열로 변환하는 메소드");
     System.out.println(str6);
     
   }
@@ -187,7 +187,8 @@ public class MainWrapper {
 //    ex02();
 //    ex03();
 //    ex04();
-      ex05();
+//    ex05();
+    ex06();
+    
   }
-
 }
