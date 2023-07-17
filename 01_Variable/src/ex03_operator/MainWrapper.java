@@ -174,6 +174,8 @@ public class MainWrapper {
     String str4 = 100 + ""; // 빈 문자열 더하기
     String str5 = 1.5 + ""; // 빈 문자열 더하기
     
+    
+    
     //참고. 문자열로 변환하는 메소드가 있다.
     String str6 = String.valueOf(100); // 잘 안 쓸 뿐
     System.out.println("\n문자열로 변환하는 메소드");

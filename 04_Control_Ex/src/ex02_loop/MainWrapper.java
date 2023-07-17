@@ -31,7 +31,7 @@ public class MainWrapper {
       total += money;
     }
     
-    for(int i = 1; total < goal; i++) {
+    for(; total < goal;) {
       nth++;
       System.out.println(nth + "회 모금액 " + money + "원, 현재 모금액 " + (total+money) + "원");
       total += money;
@@ -47,7 +47,7 @@ public class MainWrapper {
     for(int i = 1; i <= 9; i++) {
       System.out.println(i + "단");
       for(int j = 1; j <= 9; j++) {
-        System.out.println(i + " x " + j + " = " + i*j);
+        System.out.println(i + "x" + j + "=" + i*j);
       }
       System.out.println("");
     }
@@ -64,7 +64,8 @@ public class MainWrapper {
     for(int i = 1; i <= 9; i++) {
       System.out.println(i + "단");
       for(int j = 1; j <= 9; j++) {
-        System.out.print(i + "x" + j + "=" + i*j + " ");
+        String result = String.format("%-4d", i*j);
+        System.out.print(i + "x" + j + "=" + result);
       }
       System.out.println("\n");
     }    
@@ -81,7 +82,8 @@ public class MainWrapper {
     // 참고할 코드
     // System.out.print("*");  // *를 출력한 뒤 줄을 바꾸지 않는다.
     // System.out.println();   // 줄 바꾸기
-    
+
+//
     int n = 5; // 삼각별 단계 지정해주는 파라미터
     for(int i = 0; i < n; i++) {
       for(int j = 0; j < n; j++) {
@@ -95,6 +97,14 @@ public class MainWrapper {
       System.out.println();
     }
     
+    for(int row = 1; row <= n; row ++) {
+      for(int star = 1; star <= row; star ++) {
+        System.out.print("*");
+      }
+      System.out.println();
+    }
+    
+    
   }
   
   public static void ex06() {
@@ -104,9 +114,10 @@ public class MainWrapper {
     // ***
     // **
     // *
-    
+    System.out.println();
+    // 내가한것 
     int n = 5; // 삼각별 단계 지정해주는 파라미터
-    for(int i = n; i > 0; i--) {
+    for(int i = n; i >= 0; i--) {
       for(int j = 0; j < n; j++) {
         if(i > j) {
           System.out.print("*");
@@ -114,6 +125,13 @@ public class MainWrapper {
         else {
           System.out.print(" ");
         }
+      }
+      System.out.println();
+    }
+    // 교수님이 하신것
+    for(int row = 1; row <= 5; row++) {
+      for(int star = 1; star <= 6 - row; star ++) {
+        System.out.print("*");
       }
       System.out.println();
     }
@@ -129,12 +147,24 @@ public class MainWrapper {
     // *********
     
     int n = 5; // 삼각별 단계 지정해주는 파라미터
-    
+    // 내가한 것
     for(int i = 0; i < n; i++) {
-      for(int j = 0; j < n-i; j++) {
+      for(int j = 0; j < n-i-1; j++) {
         System.out.print(" ");
       }
       for(int q = 0; q < 2*n-2*(n-i)+1; q++) {
+        System.out.print("*");
+      }
+      System.out.println();
+    }
+    
+    // 강사님이 한 것
+    System.out.println();
+    for(int row = 1; row <= 5; row++) {
+      for(int space = 1; space <= n - row; space++) {
+        System.out.print(" ");
+      }
+      for(int star = 6-row; star <= row + 4; star++) {
         System.out.print("*");
       }
       System.out.println();
@@ -149,14 +179,14 @@ public class MainWrapper {
     //   *****
     //    ***
     //     *
+    System.out.println();
+    int level = 5; // 삼각별 단계 지정해주는 파라미터
     
-    int n = 5; // 삼각별 단계 지정해주는 파라미터
-    
-    for(int i = 0; i < n; i++) {
-      for(int j = n; j > n-i; j--) {
+    for(int row = 0; row < level; row++) {
+      for(int space = level; space > level-row; space--) {
         System.out.print(" ");
       }
-      for(int q = 0; q <= 2*(n-i-1); q++) {
+      for(int star = 0; star <= 2*(level-(row+1)); star++) {
         System.out.print("*");
       }
       System.out.println();
@@ -166,15 +196,14 @@ public class MainWrapper {
   }
   
   public static void main(String[] args) {
-//    ex01();
-//    ex02();
-//    ex03();
-//    ex04();
-//    ex05();
-//    ex06();
-//    ex07();
+    ex01();
+    ex02();
+    ex03();
+    ex04();
+    ex05();
+    ex06();
+    ex07();
     ex08();
-    
   }
   
 }
