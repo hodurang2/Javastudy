@@ -157,17 +157,17 @@ public class MainWrapper {
     }
     System.out.println(Arrays.deepToString(a));
     
-//// ㅗ -> ㅏ 모양
-//    System.out.println("270도 회전");
-//    for(int i = 0; i < 5; i++) {
-//      for(int j = 4; j >= 0; j--) {
-//        b[i][j] = a[j][i];
-//        System.out.print(b[i][j]);
-//      }
-//      System.out.println();
-//    }
-//    a = b;
-//    
+// ㅗ -> ㅏ 모양
+    System.out.println("270도 회전");
+    for(int i = 0; i < 5; i++) {
+      for(int j = 4; j >= 0; j--) {
+        b[i][j] = a[j][i];
+        System.out.print(b[i][j]);
+      }
+      System.out.println();
+    }
+    a = b;
+    
   }
   
   public static void main(String[] args) {
