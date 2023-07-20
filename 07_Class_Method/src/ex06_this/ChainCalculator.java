@@ -43,20 +43,20 @@ public class ChainCalculator {
   }
   
   public ChainCalculator subrtaction(double value) {
-    value -= value;
+    this.value -= value;
     System.out.print(" - " + value);
     return this;
   }
   
-  public ChainCalculator multiplication(double a) {
-    value *= a;
-    System.out.print(" * " + a);
+  public ChainCalculator multiplication(double value) {
+    this.value *= value;
+    System.out.print(" * " + value);
     return this;
   }
   
-  public ChainCalculator division(double a) {
-    value /= a;
-    System.out.print(" / " + a);
+  public ChainCalculator division(double value) {
+    this.value /= value;
+    System.out.print(" / " + value);
     return this;
   }
   
