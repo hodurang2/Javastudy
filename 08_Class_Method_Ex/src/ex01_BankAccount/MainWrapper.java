@@ -26,11 +26,12 @@ public class MainWrapper {
     you.setAccNo("000-11-7777-321");
     
     // 내가 너에게 30000원 이체하겠다.
-    my.transfer(you, 30000, "000-11-7777-331");
+    my.transfer(you, 30000, "000-11-7777-321");
     
     // my, you 객체 조회하기
     my.inquiry();   // 통장잔액: 19999원
     you.inquiry();  // 통장잔액: 30000원
+
   }
 
 }

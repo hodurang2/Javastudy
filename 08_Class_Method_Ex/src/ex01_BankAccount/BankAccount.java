@@ -60,11 +60,18 @@ public class BankAccount {
   }
   
   /**
-   * 송금 메소드
-   * @param name
-   * @param money
+   * 이체 메소드<br>
+   * 기존의 입금메소드와 출금 메소드를 활용
+   * 내 계좌에서 출금 먼저수행 출금된 금액만큼 다른계좌로 입금
+   * @param name      송금받을 객체명
+   * @param money     송금할 돈 (0보다 작거나 계좌잔액보다 적으면 0반환)
+   * @param account   송금할 계좌(계좌번호가 일치하지않으면 0반환)
+   * @return
    */
-  public long transfer(BankAccount name, long money, String account) {
+  public void transfer(BankAccount name, long money, String account) {
+    name.deposit(withdrawal(money));
+    
+    /* 어제 내가 짠 송금 메소드
     long retVal = 0;
     if( (money > balance) || (money <= 0) || (name.accNo != account) ) {
       retVal = 0;
@@ -74,6 +81,7 @@ public class BankAccount {
       retVal = money;
     }
     return retVal;
+    */
   }
   
   public void setBalance(long money) {
