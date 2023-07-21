@@ -26,14 +26,14 @@ public class Watch {
   private int second;
   
   // set 필드 메소드
-  public void setHour(int time) {
-    hour = time;
+  public void setHour(int hour) {
+    this.hour = hour;
   }
-  public void setMinute(int time) {
-    minute = time;
+  public void setMinute(int minute) {
+    this.minute = minute;
   }
-  public void setSecond(int time) {
-    second = time;
+  public void setSecond(int second) {
+    this.second = second;
   }
   
   // get 필드 메소드

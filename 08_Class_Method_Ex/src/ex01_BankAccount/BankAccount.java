@@ -84,18 +84,18 @@ public class BankAccount {
     */
   }
   
-  public void setBalance(long money) {
-    if(money <= 0) {
+  public void setBalance(long balance) {
+    if(balance <= 0) {
       return;
     }
-    balance = money;
+    this.balance = balance;
   }
   
-  public void setAccNo(String accnum) {
-    if(accnum.length() != 15) {
+  public void setAccNo(String accNo) {
+    if(accNo.length() != 15) {
       return;
     }
-    accNo = accnum;
+    this.accNo = accNo;
   }
   
   public long getBalance() {

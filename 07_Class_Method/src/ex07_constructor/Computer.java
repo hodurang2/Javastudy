@@ -23,11 +23,11 @@ public class Computer {
   
   private String model;
   
-  public Computer() { // 내가 만든 디폴트생성자
+  public Computer() { // 내가 만든 디폴트생성자이므로 굳이 만들필요 없음
     System.out.println("Computer() 생성자가 호출되었습니다.");
   }
   
-  public Computer(String model) {
+  public Computer(String model) { // 일반적인 생성자
     this.model = model;
 //    this.setModel(model);
     System.out.println("Computer(String model) 생성자가 호출되었다.");
