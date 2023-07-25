@@ -10,9 +10,5 @@ public class Cup {
   public void setCoffee(Coffee cup) {
     this.coffee = coffee;
   }
-
-
-  
-  
-  
+ 
 }
