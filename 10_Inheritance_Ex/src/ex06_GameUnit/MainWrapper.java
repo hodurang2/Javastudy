@@ -4,7 +4,7 @@ public class MainWrapper {
 
   public static void main(String[] args) {
     
-    GameUnit unit1 = new Marine("마린");
+    GameUnit unit1 = new Marine("마린"); // 생성
     GameUnit unit2 = new Firebat("파뱃");
     
     // 초기 체력 설정

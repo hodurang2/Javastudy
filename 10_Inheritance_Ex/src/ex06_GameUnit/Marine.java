@@ -2,7 +2,6 @@ package ex06_GameUnit;
 
 public class Marine extends GameUnit {
   
-
   private final int POWER = 5;
   
   public Marine(String name) {
