@@ -27,4 +27,10 @@ public class Person {
     System.out.println("쿨쿨");
   }
   
+  public void info() {
+    System.out.println("이름: " + name);
+  }
+
+  public void study() {}    // 실행이 아닌 호출 목적 메소드
+  public void working() {}  // 실행이 아닌 호출 목적 메소드
 }

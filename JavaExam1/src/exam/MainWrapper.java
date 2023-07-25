@@ -117,21 +117,22 @@ public class MainWrapper {
 	// 예시
 	// 행주도마
 	public static void q8() {
-		String strScore = "75";
+		String strScore = "100";
 		int score = Integer.parseInt(strScore);
 		String gift = "";
 		switch (score/10) {
 		case 10:
 		case  9:
-		  gift += "냄비";
+		  gift = "냄비" + gift;
 		case  8:
-		  gift += "식칼";
+		  gift = "식칼" + gift;
 		case  7:
-		  gift += "도마";
+		  gift = "도마" + gift;
 		case  6:
-		  gift += "행주";
+		  gift = "행주" + gift;
 		  break;
 		}
+		
 		System.out.println("사은품: " + gift);
 		
 	}
@@ -161,9 +162,9 @@ public class MainWrapper {
 		  } else {
 		    condition2 = false;
 		  }
-		  if(condition1 && condition2 == true) {
+		  if(condition1 && condition2) {
 		    System.out.print("짝짝 ");
-		  } else if(condition1 || condition2 == true) {
+		  } else if(condition1 || condition2) {
 		    System.out.print("짝   ");
 		  } else {		    
 		    System.out.print(String.format("%-5d", i));
@@ -233,28 +234,28 @@ public class MainWrapper {
 	
 	// main 메소드는 그대로 사용합니다.
 	public static void main(String[] args) {
-		System.out.println("=====문제1=====");
-		q1();
-		System.out.println("=====문제2=====");
-		q2();
-		System.out.println("=====문제3=====");
-		q3();
-		System.out.println("=====문제4=====");
-		q4();
-		System.out.println("=====문제5=====");
-		q5();
-		System.out.println("=====문제6=====");
-		q6();
-		System.out.println("=====문제7=====");
-		q7();
+//		System.out.println("=====문제1=====");
+//		q1();
+//		System.out.println("=====문제2=====");
+//		q2();
+//		System.out.println("=====문제3=====");
+//		q3();
+//		System.out.println("=====문제4=====");
+//		q4();
+//		System.out.println("=====문제5=====");
+//		q5();
+//		System.out.println("=====문제6=====");
+//		q6();
+//		System.out.println("=====문제7=====");
+//		q7();
 		System.out.println("=====문제8=====");
 		q8();
-		System.out.println("=====문제9=====");
-		q9();
-		System.out.println("=====문제10=====");
-		q10();
-		System.out.println("=====문제11=====");
-		q11();
+//		System.out.println("=====문제9=====");
+//		q9();
+//		System.out.println("=====문제10=====");
+//		q10();
+//		System.out.println("=====문제11=====");
+//		q11();
 	}
 
 }

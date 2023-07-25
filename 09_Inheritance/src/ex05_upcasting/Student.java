@@ -27,10 +27,16 @@ public class Student extends Person{
     this.school = school;
   }
   
+  @Override
   public void study() {
     System.out.println("열공");
   }
-
+  
+  @Override
+  public void info() {
+    System.out.println("이름: " + getName());
+    System.out.println("학교: " + school);
+  }
 
   
   
