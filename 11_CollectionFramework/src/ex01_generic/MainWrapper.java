@@ -6,7 +6,7 @@ public class MainWrapper {
     // Generic처리 가능한 타입( Boolean, Byte, Character, Integer, Long, Double ) : Wrapper Class 
     
     // String을 저정하는 box1
-    Box<String> box1 = new Box();   
+    Box<String> box1 = new Box<String>();   
     box1.setItem("Hello World");
     System.out.println(box1.getItem());
     
