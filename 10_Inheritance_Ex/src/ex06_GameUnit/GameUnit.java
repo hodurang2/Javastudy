@@ -1,6 +1,6 @@
 package ex06_GameUnit;
 
-public class GameUnit {
+public abstract class GameUnit {
   
   private String name;
   private int hp;
@@ -32,8 +32,7 @@ public class GameUnit {
     this.alive = alive;
   }
   
-  public void attack(GameUnit unit) {
-  }
+  public abstract void attack(GameUnit unit);
   
   
 }

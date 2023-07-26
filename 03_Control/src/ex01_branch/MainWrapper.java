@@ -90,7 +90,7 @@ public class MainWrapper {
   public static void ex04() {
     
     int button = 1;
-     
+    
     switch(button) {
     case 1:
       System.out.println("목록보기");
