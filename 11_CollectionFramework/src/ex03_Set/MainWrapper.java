@@ -1,7 +1,9 @@
 package ex03_Set;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Set;
 
 public class MainWrapper {
@@ -68,6 +70,7 @@ public class MainWrapper {
     Iterator<String> arm = flower.iterator();
     
     // hasNext는 HashSet에서 데이터가 있는지 true/false로 반환
+    // next는 HashSet에서 데이터를 가져오는것 -> 데이터가 다떨어지면 exception 오류
     
 //    System.out.println(arm.hasNext()); 
 //    System.out.println(arm.next());
@@ -90,11 +93,87 @@ public class MainWrapper {
     
   }
   
+  public static void ex04() {
+    
+    // 동일한 객체 2개 생성
+    Person p1 = new Person("홍길동", 30);
+    Person p2 = new Person("홍길동", 30);
+    
+    // HashSet 선언 & 생성
+    Set<Person> people = new HashSet<Person>();
+    
+    //요소 추가
+    people.add(p1);
+    people.add(p2);
+    
+    // 확인
+    System.out.println(people);
+    System.out.println(people.hashCode());
+    
+    
+  }
+  
+  public static void ex05() {
+    
+    // ArrayList 선언 & 생성
+    List<Integer> numbers1 = Arrays.asList(1, 2, 3, 4, 5);
+    List<Integer> numbers2 = Arrays.asList(6, 7, 3, 4, 5);
+    
+    // ArrayList를 이용해서 HashSet 생성
+    Set<Integer> set1 = new HashSet<Integer>(numbers1);
+    Set<Integer> set2 = new HashSet<Integer>(numbers2);
+    
+    // 교집합
+    set1.retainAll(set2);  // 교집합 결과는 set1에 저장된다.
+    
+    System.out.println(set1);  // [3, 4, 5]
+    
+  }
+  
+  public static void ex06() {
+    
+    // ArrayList 선언 & 생성
+    List<Integer> numbers1 = Arrays.asList(1, 2, 3, 4, 5);
+    List<Integer> numbers2 = Arrays.asList(6, 7, 3, 4, 5);
+    
+    // ArrayList를 이용해서 HashSet 생성
+    Set<Integer> set1 = new HashSet<Integer>(numbers1);
+    Set<Integer> set2 = new HashSet<Integer>(numbers2);
+    
+    // 합집합
+    set1.addAll(set2);  // 합집합 결과는 set1에 저장된다.
+    
+    System.out.println(set1);  // [1, 2, 3, 4, 5, 6, 7]
+    
+  }
+  
+  public static void ex07() {
+    
+    // ArrayList 선언 & 생성
+    List<Integer> numbers1 = Arrays.asList(1, 2, 3, 4, 5);
+    List<Integer> numbers2 = Arrays.asList(6, 7, 3, 4, 5);
+    
+    // ArrayList를 이용해서 HashSet 생성
+    Set<Integer> set1 = new HashSet<Integer>(numbers1);
+    Set<Integer> set2 = new HashSet<Integer>(numbers2);
+    
+    // 차집합
+    set1.removeAll(set2);  // 차집합 결과는 set1에 저장된다.
+    
+    System.out.println(set1);  // [1, 2]
+    
+  }
+  
+  
   
   public static void main(String[] args) {
 //    ex01();
 //    ex02();
-    ex03();
+//    ex03();
+    ex04();
+//    ex05();
+//    ex06();
+//    ex07();
   }
 
 }
