@@ -21,8 +21,7 @@ public class MainWrapper {
     Box<Person> box3 = new Box<Person>();
     box3.setItem(new Person("정찬호"));
     System.out.println(box3.getItem());
-    
-    
+
   }
 
 }

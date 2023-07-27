@@ -12,5 +12,4 @@ public class Box<T> {
     this.item = item;
   }
   
-  
 }
