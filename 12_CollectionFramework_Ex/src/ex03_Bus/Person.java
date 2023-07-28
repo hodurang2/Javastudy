@@ -1,4 +1,4 @@
-package exo3_Bus;
+package ex03_Bus;
 
 public class Person {
   
