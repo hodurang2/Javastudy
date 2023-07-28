@@ -40,8 +40,8 @@ public class Bus {
     }
     System.out.println(seatNo + "번 승객 " + seats.get(seatNo-1).getPerson() + "하차 했습니다.");
 //    seats.get(seatNo - 1).setPerson(null);
-    System.out.println("하차한사람: " + seats.remove(seatNo-1).getPerson());
-//    seats.remove(seatNo - 1);
+    seats.remove(seatNo - 1);
+    seats.add(seatNo - 1, new Seat());
   }
   
   public void info() {

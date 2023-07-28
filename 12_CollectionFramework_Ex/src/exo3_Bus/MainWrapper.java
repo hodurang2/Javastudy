@@ -14,7 +14,7 @@ public class MainWrapper {
     bus.getOn(25, new Person("망다혜"));   // 오류 메시지 출력
     bus.getOn(30, new Person("방다혜"));   // 오류 메시지 출력
 
-    bus.getOff(2);
+    bus.getOff(1);
     bus.getOff(10); // 오류 메시지 출력
     bus.getOff(30); // 오류 메시지 출력
     bus.getOn(1, new Person("강다혜"));
