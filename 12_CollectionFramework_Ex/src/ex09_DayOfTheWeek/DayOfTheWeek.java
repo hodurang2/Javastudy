@@ -28,7 +28,7 @@ public class DayOfTheWeek {
   private int month;            // 7
   private int day;              // 28
   private String dayOfTheWeek;  // 금요일
-  private List<Integer> lastDay = Arrays.asList(0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30);
+  private List<Integer> lastDay = Arrays.asList(0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
   private List<String> week = Arrays.asList("일", "월", "화", "수", "목", "금", "토");
   
   // new DayOfTheWeek(2023, 7, 28);
@@ -42,20 +42,32 @@ public class DayOfTheWeek {
     int totalDay = 0;  // AD 1년 1월 1일 이후로 며칠이 지났는지 저장한 변수
     
     // year를 이용해 totalDay 누적
+    for(int i = 1; i < this.year; i++) {
+      totalDay += 365;
+      if((i % 4 == 0 && i % 100 != 0) || i % 400 == 0) {
+        totalDay++;
+      } 
+    }
     
     // month를 이용해 totalDay 누적(리스트 lastDay 활용)
-    
+    if((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+      lastDay.set(2, 29);
+    } 
+    for(int i = 1; i < month; i++) {
+      totalDay += lastDay.get(i);
+    }
     // day를 이용해 totalDay 누적
-    
+    totalDay += day;
     // dayOfTheWeek 계산(totalDay + 리스트 week 활용)
-    
+    dayOfTheWeek = week.get(totalDay % 7);
+
   }
   
   // toString()
   @Override
   public String toString() {
-    // TODO Auto-generated method stub
-    return super.toString();
+    String result = year + "년 " + month + "월 " + day + "일은 " + dayOfTheWeek + "요일입니다.";
+    return result;
   }
   
 }
