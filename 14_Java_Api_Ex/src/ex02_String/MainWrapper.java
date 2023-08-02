@@ -88,7 +88,7 @@ public class MainWrapper {
   //   역삼역 : 거꾸로 읽어도 역삼역입니다.
   public static void ex05() {
     Scanner sc = new Scanner(System.in);
-    StringBuilder sb = new StringBuilder();
+    StringBuilder sb = new StringBuilder();  
     
     String str = sc.next();
     

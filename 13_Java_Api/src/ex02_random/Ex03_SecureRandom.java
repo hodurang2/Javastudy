@@ -20,10 +20,12 @@ public class Ex03_SecureRandom {
     int randomNumber2 = secureRandom.nextInt();
     int randomNumber3 = secureRandom.nextInt(5);
     
+    String n1 = secureRandom.toString();
+    
     System.out.println(randomNumber1);
     System.out.println(randomNumber2);
     System.out.println(randomNumber3);
-
+    System.out.println(n1);
     
   }
 

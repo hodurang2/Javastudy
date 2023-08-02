@@ -73,6 +73,19 @@ public class MainWrapper {
   
   public static void ex03() {
     
+    /*
+     * 파일, 디렉토리 정보 확인
+     * listFiles()    : 모든 File 객체를 저장한 File[] 반환
+     * getName()      : 이름 반환
+     * getParent()    : 저장된 디렉토리 반환
+     * getPath()      : getParent() + getName()
+     * lastModified() : 최종수정일을 long 타입으로 반환 
+     * length()       : 크기를 바이트 단위로 반환
+     * isDerectory()  : 디렉토리이면 true 반환
+     * isFile()       : 파일이면 true 반환
+     */
+    
+    
     // 파일, 디렉토리 정보 확인
     
     // 디렉토리를 File 객체로 생성
