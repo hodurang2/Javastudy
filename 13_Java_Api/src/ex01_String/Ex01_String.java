@@ -110,7 +110,7 @@ public class Ex01_String {
     // charAt 메소드
     // 문자열의 특정 인덱스(Index)의 문자를 반환
     
-    String name = "tom";
+    String name = "역삼역";
     
     char ch1 = name.charAt(0);
     char ch2 = name.charAt(1);
@@ -126,7 +126,7 @@ public class Ex01_String {
     
     // substring 사용법
     // 1. substring(int begin) : 인덱스 begin부터 끝까지 반환
-    // 2. substring(int begin, int end) : 인데스 begin부터 end이전까지 반환 ( begin <= 추출범위 < end )
+    // 2. substring(int begin, int end) : 인덱스 begin부터 end이전까지 반환 ( begin <= 추출범위 < end )
     
     String name = "tom cruise";
     
@@ -284,7 +284,7 @@ public class Ex01_String {
 //    ex03();
 //    ex04();
 //    ex05();
-//    ex06();
+    ex06();
 //    ex07();
 //    ex08();
 //    ex09();
@@ -292,7 +292,7 @@ public class Ex01_String {
 //    ex11();
 //    ex12();
 //    ex13();
-    ex14();
+//    ex14();
     
   }
   
