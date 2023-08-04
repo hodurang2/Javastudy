@@ -63,27 +63,33 @@ public class Lotto {
    * 2중배열로
    */
   public void generateLotto(int money) {
-    
     int count = (money / 1000), change = (money % 1000);
     for(int i = 0; i < count; i++) {
       String turn = String.format("%02d", i%5 +1);
       int num1 = (int)(Math.random() * 44 + 1);
       int num2, num3, num4, num5, num6;
+      
       while(true) {
         num2 = (int)(Math.random() * 44 + 1);
-        if(num1 == num2) {
-          continue;
-        } else if()
-          if((num1 == num2) || (num1 == num3) ) {
-            num3 = (int)(Math.random() * 44 + 1);
-            
+        if(num1 != num2) {
+          num3 = (int)(Math.random() * 44 + 1);
+          if((num1 != num3) && (num2 != num3) ) {
+            num4 = (int)(Math.random() * 44 + 1);
+            if((num1 != num4) && (num2 != num4) && (num3 != num4)) {
+              num5 = (int)(Math.random() * 44 + 1);
+              if((num1 != num5) && (num2 != num5) && (num3 != num5) && (num4 != num5)) {
+                num6 = (int)(Math.random() * 44 + 1);
+                if((num1 != num6) && (num2 != num6) && (num3 != num6) && (num4 != num6) && num5 != num6) {
+                  break;
+                }
+              }
+            }
+          } 
         }
       }
-      num4 = (int)(Math.random() * 44 + 1);
-      num5 = (int)(Math.random() * 44 + 1);
-      num6 = (int)(Math.random() * 44 + 1);
       
-      System.out.println(turn + " : " + num1 + num2 + num3 + num4 + num5 + num6);
+      
+      System.out.println(turn + " : " + String.format("%4d", num1) + String.format("%4d", num2) + String.format("%4d", num3) + String.format("%4d", num4) + String.format("%4d", num5) + String.format("%4d", num6));
       if((i+1)%5 == 0) {
         System.out.println("------------------------------");
       }

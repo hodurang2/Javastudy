@@ -33,6 +33,7 @@ public class ParkingLot {
   public void deleteCar() {
     if(cars.isEmpty()) {
       System.out.println("현재 주차장에 등록된 차량이 없습니다.");
+      return;
     }
     System.out.print("삭제할 차량번호 입력 >>> ");
     String carNo = sc.next();
