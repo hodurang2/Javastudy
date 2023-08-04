@@ -35,8 +35,13 @@ public class MainWrapper {
     // 파일로 데이터 내보낼 때 사용하는 스트림 : FileOutputStream이다. 이름이 매우 직관적
     // 출력스트림 선언
     FileOutputStream fout = null;
-    // 출력스트림 생성
+    
     try {
+      
+      // 출력스트림 생성 (반드시 예외처리가 필요한코드)
+      
+      // 1. 생성모드 : 언제나 새로만든다. (덮어쓰기) new FileOutputStream(file)
+      // 2. 추가모드 : 기존 파일에 추가한다.         new FileOutputStream(file, true)
       fout = new FileOutputStream(file); // 파일객체를 목적지로 전달하는 메소드
       // 오류나는 이유는 생성자로부터 예외 처리를 하기 때문. -> 그래서 try오픈 후 사용
       
@@ -53,6 +58,8 @@ public class MainWrapper {
       fout.write(c);
       fout.write(b);
       
+      System.out.println(file.getPath() + "파일크기" + file.length() + "바이트");
+      
     } catch(IOException e) {
       e.printStackTrace();
     } finally {
@@ -64,8 +71,6 @@ public class MainWrapper {
         e.printStackTrace();
       }
     } 
-    
-    System.out.println(file.getPath() + "파일크기" + file.length() + "바이트");
   }
   
   public static void ex02() {
@@ -92,6 +97,7 @@ public class MainWrapper {
       
       
       fout.write(b);
+      System.out.println(file.getPath() + "파일크기" + file.length() + "바이트");
       
     } catch(IOException e) {
       e.printStackTrace();
@@ -104,8 +110,6 @@ public class MainWrapper {
         e.printStackTrace();
       }
     } 
-    
-    System.out.println(file.getPath() + "파일크기" + file.length() + "바이트");
   }
   
   public static void ex03() {
@@ -147,6 +151,8 @@ public class MainWrapper {
     bout.write(s1.getBytes("UTF-8"));
     bout.write(c);
     bout.write(s2.getBytes(StandardCharsets.UTF_8)); // getBytes("UTF-8)과 동일
+    System.out.println(file.getPath() + "파일크기" + file.length() + "바이트");
+    
     } catch (IOException e) {
       e.printStackTrace();
     } finally {
@@ -158,8 +164,6 @@ public class MainWrapper {
         e.printStackTrace();
       }
     }
-    
-    System.out.println(file.getPath() + "파일크기" + file.length() + "바이트");
   }
 
   public static void ex04() {
@@ -191,10 +195,12 @@ public class MainWrapper {
       String school = "가산대학교";
       
       // 출력(파일로 데이터 보내기)
-      dout.writeChars(name);
+      dout.writeChars(name); // dout.writeChar('t'), dout.writeChar('o'), dout.writeChar('m')
       dout.writeInt(age);
       dout.writeDouble(height);
       dout.writeUTF(school);
+      
+      System.out.println(file.getPath() + "파일크기" + file.length() + "바이트");
       
     } catch(IOException e) {
       e.printStackTrace();
@@ -207,9 +213,6 @@ public class MainWrapper {
         e.printStackTrace();
       }
     }
-    
-    System.out.println(file.getPath() + "파일크기" + file.length() + "바이트");
-    
   }
   
   public static void ex05() {
@@ -248,6 +251,8 @@ public class MainWrapper {
       // 출력(파일로 데이터 보내기)
       oout.writeObject(student);
       
+      System.out.println(file.getPath() + "파일크기" + file.length() + "바이트");
+      
     } catch(IOException e) {
       e.printStackTrace();
     } finally {
@@ -259,8 +264,6 @@ public class MainWrapper {
         e.printStackTrace();
       }
     }
-    
-    System.out.println(file.getPath() + "파일크기" + file.length() + "바이트");
   }
   
   public static void main(String[] args) {
