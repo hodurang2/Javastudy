@@ -37,7 +37,6 @@ public class Ex04_SimpleDateFormat {
     System.out.println(strDate);
     
     System.out.println(new SimpleDateFormat("yy/MM/dd E HH:mm:ss").format(date));
-    
   }
 
 }
