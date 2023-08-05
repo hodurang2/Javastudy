@@ -29,8 +29,8 @@ public class MainWrapper {
     
     while(true) {
       
-      SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-      String strDate = sdf.format(date);
+//      SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+//      String strDate = sdf.format(date);
       try {
         
         System.out.print("첫 번째 정수를 입력하세요 >>> ");
@@ -57,6 +57,8 @@ public class MainWrapper {
         
       } catch(Exception e1) {
         try {
+          SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+          String strDate = sdf.format(date);
           System.out.println(strDate + "\t" + e1.getMessage());
           bw = new BufferedWriter(new FileWriter(file, true));
           bw.write(strDate + "\t" + e1.getMessage() + "\n");
