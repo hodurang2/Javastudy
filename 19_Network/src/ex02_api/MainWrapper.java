@@ -52,7 +52,7 @@ public class MainWrapper {
       sb.append("&returnType=").append(returnType);
       sb.append("&numOfRows=").append(numOfRows);
       sb.append("&pageNo=").append(pageNo);
-      sb.append("&sidoName=").append(sidoName);
+      sb.append("&sidoName=").append(URLEncoder.encode(sidoName, "UTF-8"));
       sb.append("&ver=").append(ver);
       
       url = new URL(sb.toString());  // MalformedURLException
@@ -85,7 +85,7 @@ public class MainWrapper {
     } catch( MalformedURLException e) {
       System.out.println(e.getMessage());
     } catch (IOException e ) {
-      System.out.println(e.getMessage() );
+      System.out.println(e.getMessage());
     } catch (RuntimeException e ) {
     System.out.println(e.getMessage() );
     } finally {
@@ -97,14 +97,7 @@ public class MainWrapper {
         e.printStackTrace();
       }
     }
-    
-    
   }
-    
-    
-    
-    
-  
   
   public static void main(String[] args) {
     
