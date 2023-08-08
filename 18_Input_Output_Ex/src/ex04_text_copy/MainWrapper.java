@@ -55,30 +55,50 @@ public class MainWrapper {
     File dir = new File("C:/storage");
     File originFile = new File(dir, "alphabet.txt");
     File copyFile = new File(dir, "alphabet2.txt");
+
     
-    BufferedReader br = null;
-    BufferedWriter bw = null;
-    
-    try {
+    // try - catch - resources
+    try (BufferedReader br = new BufferedReader(new FileReader(originFile)); 
+         BufferedWriter bw = new BufferedWriter(new FileWriter(copyFile))){
       
-      br = new BufferedReader(new FileReader(originFile));
-      bw = new BufferedWriter(new FileWriter(copyFile));
+      // 복사 단위 5 char
+      char[] cb = new char[5];
+      int readChar = 0;
       
-      String line = null;
-      while((line = br.readLine()) != null) {
-        bw.write(line);
+      // 복사
+      while((readChar = br.read(cb)) != -1) {
+        bw.write(cb, 0, readChar);
       }
-      
+      // 결과
+      System.out.println(copyFile.getPath() + " 파일 생성 완료");
     } catch (IOException e) {
       e.printStackTrace();
-    } finally {
-      try {
-        if(bw != null) bw.close();
-        if(br != null) br.close();
-      } catch (IOException e) {
-        e.printStackTrace();
-      }
     }
+    
+//    내가한거    
+//    BufferedReader br = null;
+//    BufferedWriter bw = null;
+//    
+//    try {
+//      
+//      br = new BufferedReader(new FileReader(originFile));
+//      bw = new BufferedWriter(new FileWriter(copyFile));
+//      
+//      String line = null;
+//      while((line = br.readLine()) != null) {
+//        bw.write(line);
+//      }
+//      
+//    } catch (IOException e) {
+//      e.printStackTrace();
+//    } finally {
+//      try {
+//        if(bw != null) bw.close();
+//        if(br != null) br.close();
+//      } catch (IOException e) {
+//        e.printStackTrace();
+//      }
+//    }
     
     
     

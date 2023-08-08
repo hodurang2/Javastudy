@@ -26,11 +26,7 @@ public class MainWrapper {
     File file = new File(dir, "log.txt");
     
     BufferedWriter bw = null;
-    
     while(true) {
-      
-//      SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-//      String strDate = sdf.format(date);
       try {
         
         System.out.print("첫 번째 정수를 입력하세요 >>> ");
@@ -57,7 +53,7 @@ public class MainWrapper {
         
       } catch(Exception e1) {
         try {
-          SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+          SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd a h:mm:ss");
           String strDate = sdf.format(date);
           System.out.println(strDate + "\t" + e1.getMessage());
           bw = new BufferedWriter(new FileWriter(file, true));
@@ -77,9 +73,9 @@ public class MainWrapper {
         
         // 문제. 예외가 발생할때마다 예외가 발생한 시간과 예외 메시지(message)를 C:/storage/log.txt 파일에 기록하시오.
         // C:/storage/log.txt 파일 내용 예시)
-        // 2023-08-04 15:10:30    / by zero
-        // 2023-08-04 15:11:23    invalid operator ++
-        // 2023-08-04 15:12:52    null
+        // 2023-08-04 오후 3:10:30    / by zero
+        // 2023-08-04 오후 3:11:23    invalid operator ++
+        // 2023-08-04 오후 3:12:52    null
         
         
       }
