@@ -10,8 +10,7 @@ import java.net.URL;
 import java.net.URLEncoder;
 
 public class prac1 {
-
-  public static void main(String[] args) {
+  public static void ex01() {
     /*
      * 한국환경공단 에어코리아 대기오염정보 - 시도별 실시간 측정정보 조회
      * 1. 요청주소 : http://apis.data.go.kr/B552584/ArpltnInforInqireSvc/getCtprvnRltmMesureDnsty
@@ -23,49 +22,23 @@ public class prac1 {
      *    5) sidoName   : 필수, 서울
      *    6) ver        : 선택, 1.0
      */
-    
-    URL url = null;
-    HttpURLConnection con = null;
-    BufferedReader br = null;
-    BufferedWriter bw = null;
-    
-    try {
-      
-      String spec = "http://apis.data.go.kr/B552584/ArpltnInforInqireSvc/getCtprvnRltmMesureDnsty";
-      String serviceKey = "8O9HjHrrdw8cD4Bt2t48+/xPYJw56POvSft+OcjnRxM4qsbUMP/1TLUAthIN0sMJreo0oIx09NH5YwTGnbqY3Q==";
-      String returnType = "xml";
-      String numOfRows = "100";
-      String pageNo = "1";
-      String sidoName = "서울";
-      String ver = "1.0";
-      
-      StringBuilder sb = new StringBuilder();
-      sb.append(spec);
-      sb.append("?serviceKey=").append(URLEncoder.encode(serviceKey, "UTF-8"));
-      sb.append("&returnType=").append(URLEncoder.encode(returnType, "UTF-8"));
-      sb.append("&numOfRows=").append(URLEncoder.encode(numOfRows, "UTF-8"));
-      sb.append("&pageNo=").append(URLEncoder.encode(pageNo, "UTF-8"));
-      sb.append("&sidoName=").append(URLEncoder.encode(sidoName, "UTF-8"));
-      sb.append("&ver=").append(URLEncoder.encode(ver, "UTF-8"));
-      
-      url = new URL(sb.toString());
-      con = (HttpURLConnection) url.openConnection();
-      int responsecode = con.getResponseCode();
-      if(responsecode == HttpURLConnection.HTTP_OK) {
-        
-      }
-      
-      br = new BufferedReader(new InputStreamReader(con.getInputStream()));
-      
-      
-      
-    } catch (Exception e) {
-      e.printStackTrace();
-    } finally {
-      
-    }
-    
-    
+  }
+  
+  public static void ex02() {
+    /*
+     * 네이버 개발자센터 - 검색(블로그)
+     * 1. 요청주소 : https://openapi.naver.com/v1/search/blog.json
+     * 2. 요청변수
+     *    1) query   : 필수, 인코딩된 검색어
+     *    2) display : 선택, 10 (검색 결과의 개수)
+     *    3) start   : 선택, 1 (검색 시작 위치)
+     *    4) sort    : 선택, sim (sim순 또는 date순)
+     */
+  }
+  
+  public static void main(String[] args) {
+    ex01();
+    ex02();
   }
 
 }
