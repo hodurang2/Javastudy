@@ -17,7 +17,7 @@ import javax.management.RuntimeErrorException;
 
 import org.json.JSONObject;
 
-public class NaverCaptcha {
+public class Ex04_Naver_Captcha {
   
   private static final String CLIENT_ID = "MXYE0UGaBQxYKJBo9iYD";
   private static final String CLIENT_SECRET = "LBxd4WN73R";
