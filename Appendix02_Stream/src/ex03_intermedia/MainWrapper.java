@@ -54,17 +54,35 @@ public class MainWrapper {
     List<Integer> list = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10); 
     
     // 1씩 증가시키기
-    list.stream()
+    list.stream()     // 중간에 filter끼는것도 가능하다.
         .map((num) -> num+1)
         .forEach((num) -> System.out.println(num));
     
   }
   
+  public static void ex04() {
+    
+    // List
+    List<Person> list = Arrays.asList(
+        new Person("정찬호", 25),
+        new Person("정친후", 52),
+        new Person("정천호", 73),
+        new Person("정찬희", 3)
+    );
+    
+    List<Person> adult = list.stream()
+        .filter((person) -> person.getAge() >= 20)
+        .map((person) -> new Person(person.getName(), person.getAge() + 1))
+        .collect(Collectors.toList());
+    
+    System.out.println(adult);
+  }
   
   public static void main(String[] args) {
 //    ex01();
 //    ex02();
-    ex03();
+//    ex03();
+    ex04();
     
   }
 
