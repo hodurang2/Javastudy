@@ -39,8 +39,6 @@ package ex02_lambda;
  *      return "tom";
  *    }
  * 
- *    () -> return "tom";
- *    
  *    () -> "tom"; // 메소드에 return만 존재하면 return을 생략한다.
  *    
  * 4. 파라미터 O, 반환 O
