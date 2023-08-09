@@ -1,5 +1,6 @@
 package ex01_connect;
 
+import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class MainWrapper {
@@ -38,8 +39,10 @@ public class MainWrapper {
         System.out.println("DB 접속 닫기 실패");
       }
     }
-    
-    
+  }
+  
+  // 3. 접속 정보를 별도의 파일(프로퍼티 파)에 저장 (.gitignire 대비)
+  public static void ex03() {
     
   }
   
@@ -47,8 +50,13 @@ public class MainWrapper {
   
   
   
-  
   public static void main(String[] args) {
+    
+    ex01();
+    ex02();
+    ex03();
+    
+    
   }
 
 }

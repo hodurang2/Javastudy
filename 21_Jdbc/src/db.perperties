@@ -1,0 +1,5 @@
+# 프로퍼티 : 임의로 정함
+# 프로머티 = 값
+url=jdbc:oracle:thin:@localhost:1521:xe
+user=GD
+password=1111
