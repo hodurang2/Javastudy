@@ -28,31 +28,37 @@ public class Company {
     String name = sc.next();
     
     try {
+      Employee employee = null;
+      
       // 정규직등록
       if(choice == 1) {
-        Employee employee = new Regular(empNo, name);
+        employee = new Regular(empNo, name);
         System.out.print("기본급 입력 >>> ");
         int wage = sc.nextInt();
-        ((Regular)employee).setSalary(wage);
-        employees.add(employee);
-      } else if(choice == 2) { // 프리랜서 등록
-        Employee employee = new Freelance(empNo, name);
+        if(wage < 0) throw new RuntimeException("0 이하는 입력하실수 없습니다.");
+        ((Regular)employee).setSalary(wage);      
+        }
+      // 프리랜서 등록
+      else if(choice == 2) {
+        employee = new Freelance(empNo, name);
         System.out.print("시간당 임금 입력 >>> ");
         int wage = sc.nextInt();
+        if(wage < 0) throw new RuntimeException("0 이하는 입력하실수 없습니다.");
         System.out.print("근무한 시간 입력 >>> ");
         int hour = sc.nextInt();
+        if(hour < 0) throw new RuntimeException("0 이하는 입력하실수 없습니다.");
         ((Freelance)employee).setHourlyWage(wage);
-        ((Freelance)employee).setWorkingHours(hour);
-        employees.add(employee);
-        System.out.println("사원 등록이 완료되었습니다. 현재 등록된 사원은 " + employees.size() + "명입니다.");
-      }
+        ((Freelance)employee).setWorkingHours(hour);      
+        }
+      employees.add(employee);
+      System.out.println("사원 등록이 완료되었습니다. 현재 등록된 사원은 " + employees.size() + "명입니다.");
     } catch (InputMismatchException e) {
       System.out.println("정수만 입력해야합니다.");
       sc.nextLine();
     }
   }
   
-  public void dropEmployee() throws RuntimeException{
+  public void dropEmployee() {
     if(employees.isEmpty()) throw new RuntimeException("사원이 1명도 없습니다.");
     System.out.println("===== 해고 =====");
     String empNo = sc.next();

@@ -34,7 +34,7 @@ Lotto를 얼마나 구입하시겠습니까?(최대 10만원) >>> 11000
   
   
   public static void main(String[] args) {
-    Lotto lotto = new Lotto();
+    LottoByMGT lotto = new LottoByMGT();
     try {
       lotto.generateLotto(lotto.buyLotto());
     } catch (RuntimeException e) {
